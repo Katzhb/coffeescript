@@ -4,7 +4,7 @@
 
 你想要通过 AJAX 来从你的服务器加载数据，而不使用 jQuery 库。
 
-## 方案
+## 解决方案
 
 你将使用本地的 [XMLHttpRequest](https://en.wikipedia.org/wiki/XMLHttpRequest) 对象。
 
@@ -26,7 +26,7 @@
 </html>
 ```
 
-当单击该按钮时，我们想给服务器发送Ajax 请求以获取一些数据。对于该例子，我们使用一个 JSON 小文件。
+当单击该按钮时，我们想给服务器发送 Ajax 请求以获取一些数据。对于该例子，我们使用一个 JSON 小文件。
 
 ```
 // data.json
@@ -66,19 +66,19 @@
 
 我们创建了一个 XMLHttpRequest 请求对象（第 3 行），并添加了一个 *readystatechange* 事件处理器。请求的 readyState 发生改变的那一刻，它就会被触发。
 
-在事件处理器中，我们会检查判断是否满足 readyState=4，若等于则说明请求已经完成。然后检查请求的状态值。状态值为200或者304都代表着请求成功，其它则表示发生错误。
+在事件处理器中，我们会检查判断是否满足 readyState=4，若等于则说明请求已经完成。然后检查请求的状态值。状态值为 200 或者 304 都代表着请求成功，其它则表示发生错误。
 
 如果请求确实成功了，那我们就会对从服务器返回的 JSON 重新进行运算，然后把它分配给一个数据变量。此时，我们可以在需要的时候使用返回的数据。
 
 在最后我们需要提出请求。
 
-在第 13 行打开了一个“GET”请求来读取 data.json 文件。
+在第 13 行打开了一个 “GET” 请求来读取 data.json 文件。
 
 在第 14 行把我们的请求发送至服务器。
 
 ## 旧版服务器支持
 
-如果你的应用需要使用旧版本的 Internet Explorer，你需确保 XMLHttpRequest 对象存在。为此，你可以在创建 XMLHttpRequest 实例之前输入以下代码。
+如果你的应用需要使用旧版本的 Internet Explorer ，你需确保 XMLHttpRequest 对象存在。为此，你可以在创建 XMLHttpRequest 实例之前输入以下代码。
 
 ```
 if (typeof @XMLHttpRequest == "undefined")
