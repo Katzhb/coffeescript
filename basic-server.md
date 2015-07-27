@@ -4,11 +4,11 @@
 
 你想在网络上提供一个服务器。
 
-## 方案
+## 解决方案
 
 创建一个基本的 TCP 服务器。
 
-## In Node.js
+## 在 Node.js 中
 ```
 net = require 'net'
 
@@ -37,7 +37,7 @@ Received connection from 127.0.0.1
 
 ## 讨论
 
-函数将为每个客户端新连接的新插口传递给 @net.createServer@。基本的服务器与访客只进行简单地交互，但是复杂的服务器会将插口连上一个专用的处理程序,然后返回等待下一个用户的任务。
+函数将为每个客户端新连接的新插口传递给 @net.createServer@ 。基本的服务器与访客只进行简单地交互，但是复杂的服务器会将插口连上一个专用的处理程序,然后返回等待下一个用户的任务。
 
 另请参阅 [Basic Client](http://coffeescript-cookbook.github.io/chapters/networking/basic-client)，[Bi-Directional Server](http://coffeescript-cookbook.github.io/chapters/networking/bi-directional-client) 和 [Bi-Directional Client](http://coffeescript-cookbook.github.io/chapters/networking/bi-directional-client)。
 
