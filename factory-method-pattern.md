@@ -4,7 +4,7 @@
 
 直到开始运行你才知道需要的是什么种类的对象。
 
-## 方案
+## 解决方案
 
 使用 [Factory Method](http://en.wikipedia.org/wiki/Factory_method_pattern) 模式和选择对象都是动态生成的。
 
