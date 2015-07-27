@@ -5,7 +5,7 @@
 你需要使用命名实体来替代 HTML 标签：  
 <br/> => &lt;br/&gt;
 
-## 方案
+## 解决方案
 
 ```
 htmlEncode = (str) ->
