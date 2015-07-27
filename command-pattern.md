@@ -4,7 +4,7 @@
 
 你需要让另一个对象处理你自己的可执行的代码。
 
-## 方案
+## 解决方案
 
 使用 [Command pattern](http://en.wikipedia.org/wiki/Command_pattern) 传递函数的引用。
 ```
@@ -35,7 +35,7 @@ incrementers.value() # => 6
 
 ## 讨论
 
-以函数作为一级的对象且从 Javascript 函数的变量范围中继承，CoffeeScript 语言模式几乎看不见。事实上，任何函数传递回调函数可以作为一个*命令*。
+以函数作为一级的对象且从 Javascript 函数的变量范围中继承，CoffeeScript 使语言模式几乎看不出来。事实上，任何函数传递回调函数可以作为一个*命令*。
 
 jqXHR 对象返回 jQuery AJAX 方法使用此模式。
 ```
