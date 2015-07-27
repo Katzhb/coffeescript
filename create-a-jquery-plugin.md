@@ -4,7 +4,7 @@
 
 你想用 CoffeeScript 来创建 jQuery 插件。
 
-## 方案
+## 解决方案
 
 ```
 # 参考 jQuery
