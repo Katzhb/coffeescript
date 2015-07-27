@@ -4,7 +4,7 @@
 
 你想要使用 jQuery 来调用 AJAX。
 
-## 方案
+## 解决方案
 
 ```
 $ ?= require 'jquery' # 由于 Node.js 的兼容性
@@ -29,7 +29,7 @@ $(document).ready ->
             $('body').append "Successful AJAX call: #{data}"
 ```
 
-jQuery 1.5 和更新版本都增加了一种新的补充的 API，用于处理不同的回调。
+jQuery 1.5 和更新版本都增加了一种新补充的 API ，用于处理不同的回调。
 
 ```
 request = $.get '/'
@@ -39,5 +39,5 @@ request = $.get '/'
 
 ## 讨论
 
-其中的 jQuery 和 $ 变量可以互换使用。另请参阅[回调绑定](http://coffeescript-cookbook.github.io/chapters/jquery/callback-bindings-jquery)。
+其中的 jQuery 和 $ 变量可以互换使用。另请参阅[ Callback bindings ](http://coffeescript-cookbook.github.io/chapters/jquery/callback-bindings-jquery)。
 
