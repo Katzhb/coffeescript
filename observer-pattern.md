@@ -4,11 +4,11 @@
   
 当一个事件发生时你不得不向一些对象发布公告。
   
-##解决方法
+## 解决方案
   
 使用观察者模式（Observer Pattern）。
   
-<pre><code>
+```
 class PostOffice
     constructor: () ->
         @subscribers = []
@@ -32,7 +32,7 @@ postOffice.subscribe "Mens Health", sub1.onNewMagazine
 postOffice.subscribe "Times", sub2.onNewNewspaper
 postOffice.notifyNewItemReleased "Times"
 postOffice.notifyNewItemReleased "Mens Health"
-</code></pre>
+```
   
 ##讨论
   
