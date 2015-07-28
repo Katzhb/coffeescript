@@ -4,11 +4,11 @@
   
 你需要 Node.js 内部与 SQLite 数据库连接的接口。
   
-##解决方法
+##解决方案
   
 使用 SQLite 模块。
   
-<pre><code>
+```
 sqlite = require 'sqlite'
 
 db = new sqlite.Database
@@ -39,13 +39,13 @@ exampleSelect = ->
 db.open ":memory:", (openErr) ->
     throw openErr if openErr
     exampleCreate()
-</code></pre>
+```
   
 ##讨论
   
 你也可以提前准备你的 SQL 查询语句。
   
-<pre><code>
+```
 sqlite = require 'sqlite'
 async = require 'async' # Not required but added to make the example more concise
 
@@ -83,6 +83,6 @@ db.open ":memory:", (openErr) ->
         (onFinish) -> prepareInsert "Mia's Root Beer", 0.75, onFinish,
         (onFinish) -> prepareSelect onFinish
     ])
-</code></pre>
+```
   
-SQL 的 SQLite 版本的以及 node-SQLite 模块文档提供了更完整的信息。
+[SQL 的 SQLite 版本](http://www.sqlite.org/lang.html)的以及 [node-SQLite](https://github.com/orlandov/node-sqlite#readme) 模块文档提供了更完整的信息。
