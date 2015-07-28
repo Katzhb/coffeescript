@@ -4,13 +4,13 @@
   
 定义一个算法的结构，作为一系列的高层次的步骤，使每一个步骤的行为可以指定，使属于一个族的算法都具有相同的结构但是有不同的行为。
   
-##解决方法
+##解决方案
   
 使用模板方法（ Template Method ）在父类中描述算法的结构，再授权一个或多个具体子类来具体地进行实现。
   
 例如，想象你希望模拟各种类型的文件的生成，并且每个文件要包含一个标题和正文。
   
-<pre><code>
+```
 class Document
     produceDocument: ->
         @produceHeader()
@@ -32,7 +32,7 @@ class DocWithoutHeader extends Document
 
 docs = [new DocWithHeader, new DocWithoutHeader]
 doc.produceDocument() for doc in docs
-</code></pre>
+```
   
 ##讨论
   
