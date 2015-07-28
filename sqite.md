@@ -2,11 +2,11 @@
   
 ##问题
   
-你需要 Node.js 内部与 SQLite 数据库连接的接口。
+你需要 Node.js 内部与 [SQLite](http://www.sqlite.org/) 数据库连接的接口。
   
 ##解决方案
   
-使用 SQLite 模块。
+使用 [SQLite 模块](http://code.google.com/p/node-sqlite/)。
   
 ```
 sqlite = require 'sqlite'
