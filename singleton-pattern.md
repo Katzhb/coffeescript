@@ -8,7 +8,7 @@
   
 公有类只包含获得一个实例的方法。实例被保存在该公共对象的闭包中，并且总是有返回值。
   
-这很奏效因为 CoffeeScript 允许你在一个类的声明中定义可执行的状态。但是，因为大多数 CoffeeScript 编译成一个 IIFE 包，如果这个方式适合你，你就不需要在类的声明中放置私有的类。之后的内容可能对开发模块化代码有所帮助，例如 CommonJS（Node.js）或 Require.js 中可见（见实例讨论）。
+这很奏效因为 CoffeeScript 允许你在一个类的声明中定义可执行的状态。但是，因为大多数 CoffeeScript 编译成一个 [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) 包，如果这个方式适合你，你就不需要在类的声明中放置私有的类。之后的内容可能对开发模块化代码有所帮助，例如 [CommonJS](http://www.commonjs.org/)（Node.js）或 [Require.js](http://requirejs.org/) 中可见（见实例讨论）。
   
 ```
 class Singleton
@@ -42,7 +42,7 @@ Singleton.PrivateClass # => undefined
   
 通过上面的实例我们可以看到，所有的实例是如何从同一个 Singleton 类的实例中输出的。你也可以看到，私有类和实例变量都无法在 Singleton class 外被访问到。 Singleton class 的本质是提供一个静态方法得到只返回一个私有类的实例。它也对外界也隐藏私有类，因此你无法创建一个自己的私有类。
   
-隐藏或使私有类在内部运作的想法是更受偏爱的。尤其是由于缺省的 CoffeeScript 将编译的代码封装在自己的 IIFE（闭包）中，你可以定义类而无须担心会被文件外部访问到。在这个实例中，注意，用惯用的模块导出特点来强调模块中可被公共访问的部分。（请看“导出到全局命名空间”中对此理解更深入的讨论）。
+隐藏或使私有类在内部运作的想法是更受偏爱的。尤其是由于缺省的 CoffeeScript 将编译的代码封装在自己的 IIFE（闭包）中，你可以定义类而无须担心会被文件外部访问到。在这个实例中，注意，用惯用的模块导出特点来强调模块中可被公共访问的部分。（请看 “[导出到全局命名空间](http://stackoverflow.com/questions/4214731/coffeescript-global-variables)” 中对此理解更深入的讨论）。
   
 ```
 root = exports ? this
@@ -67,4 +67,4 @@ class Singleton
 root.Singleton = Singleton
 ```
   
-我们可以注意到 coffeescript 是如此简单地实现这个设计模式。为了更好地参考和讨论 JavaScript 的实现，请看初学者必备 JavaScript 设计模式。
+我们可以注意到 coffeescript 是如此简单地实现这个设计模式。为了更好地参考和讨论 JavaScript 的实现，请看[初学者必备 JavaScript 设计模式](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)。
