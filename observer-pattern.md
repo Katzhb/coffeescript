@@ -6,7 +6,7 @@
   
 ## 解决方案
   
-使用观察者模式（Observer Pattern）。
+使用观察者模式[（Observer Pattern）](http://en.wikipedia.org/wiki/Observer_pattern)。
   
 ```
 class PostOffice
