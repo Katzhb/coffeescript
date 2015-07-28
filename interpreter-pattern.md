@@ -11,7 +11,7 @@
   
 我们来做个假设，例如用户希望在你的应用程序中执行数学运算。你可以让他们正向运行代码来演算指令（eval）但这会让他们运行任意代码。相反，你可以提供一个小型的“堆栈计算器（stack calculator）”语言，用来做单独分析，以便只运行数学运算，同时报告更有用的错误信息。
   
-<pre><code>
+```
 class StackCalculator
     parseString: (string) ->
         @stack = [ ]
@@ -77,13 +77,13 @@ try
     calc.parseString "5 5 5 foo"
 catch error
     error # => "Unrecognized operator: foo"
-</code></pre>
+```
   
 ##讨论
   
 作为一种替代编写我们自己的解释器的选择，你可以将现有的 CoffeeScript 解释器与更自然的（更容易理解的）表达自己的算法的正常方式相结合。
   
-<pre><code>
+```
 class Sandwich
     constructor: (@customer, @bread='white', @toppings=[], @toasted=false)->
 
@@ -136,6 +136,6 @@ send sandwich to 'Charlie' # => "Charlie requested an untoasted, white bread san
 send turkey sandwich to 'Judy' # => "Judy requested an untoasted, white bread sandwich with turkey"
 send toasted ham turkey sandwich to 'Rachel' # => "Rachel requested a toasted, white bread sandwich with turkey and ham"
 send toasted turkey ham swiss sandwich to 'Matt' # => "Matt requested a toasted, white bread sandwich with swiss, ham and turkey"
-</code></pre>
+```
   
 这个实例可以允许功能层实现返回修改后的对象，从而外函数可以依次修改它。示例通过借用动词和介词的用法，把自然语法提供给结构，当被正确使用时，会像自然语句一样结束。这样，利用 CoffeeScript 语言技能和你现有的语言技能可以帮助你关于捕捉代码的问题。
