@@ -2,17 +2,17 @@
   
 ##问题
   
-假如你正在使用 CoffeeScript 并且想要验证功能是否与预期一致，便可以决定使用 Nodeunit 测试框架。
+假如你正在使用 CoffeeScript 并且想要验证功能是否与预期一致，便可以决定使用 [Nodeunit](https://github.com/caolan/nodeunit) 测试框架。
   
 ##讨论
   
-Nodeunit 是一种 JavaScript 对于 单元测试库（ Unit Testing libraries ）中xUnit 族的实现，Java, Python, Ruby, Smalltalk 中均可以使用。
+Nodeunit 是一种 JavaScript 对于单元测试库（ Unit Testing libraries ）中 xUnit 族的实现，Java, Python, Ruby, Smalltalk 中均可以使用。
   
 当使用 xUnit 族测试框架时，你需要将所需测试的描述预期功能的代码写在一个文件中。
   
 例如，我们希望我们的计算器可以进行加法和减法，并且对于正负数均可以正确计算，我们的测试如下。
   
-<pre><code>
+```
 # test/calculator.test.coffee
 Calculator = require '../calculator'
 exports.CalculatorTest =
@@ -39,15 +39,15 @@ exports.CalculatorTest =
         result = calculator.subtract 4, -6
         test.equal(result, 10)
         test.done()
-</code></pre>
+```
   
-**安装 Nodeunit**
+##**安装 Nodeunit**
   
 在可以运行你的测试之前，你必须先安装  Nodeunit ：
   
 首先创建一个 package.json 文件
   
-<pre><code>
+```
 {
   "name": "calculator",
   "version": "0.0.1",
@@ -59,28 +59,28 @@ exports.CalculatorTest =
     "nodeunit": "~0.7.4"
   }
 }
-</code></pre>
+```
   
 接下来从一个终端运行。
   
-<pre><code>
+```
 $ npm install
-</code></pre>
+```
   
-**运行测试**
+##**运行测试**
   
 使用代码行可以简便地运行测试文件：
 
 
-<pre><code>
+```
 $ npm test
-</code></pre>
+```
   
 
 测试失败，因为我们并没有 calculator.coffee
 
 
-<pre><code>
+```
 suki@Yuzuki:nodeunit_testing (master)$ npm test
 npm WARN package.json calculator@0.0.1 No README.md file found!
 
@@ -94,20 +94,20 @@ npm WARN package.json calculator@0.0.1 No README.md file found!
 Error: ENOENT, stat '/Users/suki/tmp/nodeunit_testing/test'
 npm ERR! Test failed.  See above for more details.
 npm ERR! not ok code 0
-</code></pre>
+```
   
 我们创建一个简单文件
-<pre><code>
+```
 # calculator.coffee
 
 class Calculator
 
 module.exports = Calculator
-</code></pre>
+```
   
 并且重新运行测试套件。
 
-<pre><code>
+```
 suki@Yuzuki:nodeunit_testing (master)$ npm test
 npm WARN package.json calculator@0.0.1 No README.md file found!
 
@@ -140,13 +140,13 @@ TypeError: Object #<Calculator> has no method 'subtract'
 FAILURES: 4/4 assertions failed (31ms)
 npm ERR! Test failed.  See above for more details.
 npm ERR! not ok code 0
-</code></pre>
+```
   
-**通过测试**
+##**通过测试**
   
 让我们对方法进行实现来观察测试是否可以通过。
   
-<pre><code>
+```
 # calculator.coffee
 
 class Calculator
@@ -158,10 +158,10 @@ class Calculator
     a - b
 
 module.exports = Calculator
-</code></pre>
+```
   
 当我们重新运行测试时可以看到全部通过：
-<pre><code>
+```
 suki@Yuzuki:nodeunit_testing (master)$ npm test
 npm WARN package.json calculator@0.0.1 No README.md file found!
 
@@ -176,9 +176,9 @@ calculator.test
 ✔ CalculatorTest - test can handle negative number subtraction
 
 OK: 4 assertions (27ms)
-</code></pre>
+```
   
-**重构测试**
+##**重构测试**
   
 既然测试全部通过，我们应看一看我们的代码或测试是否可以被重构。
   
@@ -186,7 +186,7 @@ OK: 4 assertions (27ms)
   
 通常在其他的 xUnit 库中，Nodeunit 会提供一个 setUp（以及 tearDown ）功能会在测试前调用。
   
-<pre><code>
+```
 Calculator = require '../calculator'
 
 exports.CalculatorTest =
@@ -214,7 +214,7 @@ exports.CalculatorTest =
         result = @calculator.subtract 4, -6
         test.equal(result, 10)
         test.done()
-</code></pre>
+```
   
 我们可以重新运行测试，仍然可以全部通过。
 
