@@ -8,7 +8,7 @@
 
 使用 [工厂方法（Factory Method)](http://en.wikipedia.org/wiki/Factory_method_pattern) 模式和选择对象都是动态生成的。
 
-你需要将一个文件加载到编辑器，但是直到用户选择文件时你才知道它的格式。一个类使用[工厂方法(Factory Method)](http://en.wikipedia.org/wiki/Factory_method_pattern)模式可以根据文件的扩展名提供不同的解析器。
+你需要将一个文件加载到编辑器，但是直到用户选择文件时你才知道它的格式。一个类使用[工厂方法 ( Factory Method )](http://en.wikipedia.org/wiki/Factory_method_pattern) 模式可以根据文件的扩展名提供不同的解析器。
 ```
 class HTMLParser
     constructor: ->
