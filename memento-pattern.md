@@ -10,7 +10,7 @@
   
 如果你的应用程序可以让用户编辑文本文件，例如，他们可能想要撤销上一个动作。你可以在用户改变文件之前保存文件现有的状态，然后回滚到上一个位置。
   
-<pre><code>
+```
 class PreserveableText
     class Memento
         constructor: (@text) ->
@@ -34,7 +34,7 @@ pt.text # => "Yet another string"
 
 pt.restore memento
 pt.text # => "The original string"
-</code></pre>
+```
  
 ##讨论
   
